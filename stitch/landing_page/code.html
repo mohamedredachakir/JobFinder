@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d5e0f8",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "on-tertiary-container": "#bdffdb",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed": "#dbe1ff",
+                    "primary": "#004ac6",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary": "#006242",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#111c2d",
+                    "secondary-fixed": "#d8e3fb",
+                    "error-container": "#ffdad6",
+                    "secondary": "#545f73",
+                    "tertiary-container": "#007d55",
+                    "primary-container": "#2563eb",
+                    "outline-variant": "#c3c6d7",
+                    "on-background": "#191c1e",
+                    "surface-tint": "#0053db",
+                    "on-primary-fixed": "#00174b",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "on-secondary-container": "#586377",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-primary": "#b4c5ff",
+                    "on-surface": "#191c1e",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container": "#eceef0",
+                    "outline": "#737686",
+                    "on-primary-container": "#eeefff",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<nav class="fixed top-0 w-full z-50 bg-[#f7f9fb]/85 backdrop-blur-lg shadow-sm">
+<div class="max-w-[1440px] mx-auto px-8 flex items-center justify-between h-20">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-[#004ac6]">JobFinder</span>
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-[#004ac6] font-semibold border-b-2 border-[#004ac6] pb-1 transition-all duration-200" href="#">Find Jobs</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">Companies</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">Salaries</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">My Careers</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none focus:ring-2 focus:ring-primary text-sm w-64" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2 text-primary font-semibold hover:bg-primary/5 rounded-xl transition-all">Login</button>
+<button class="px-5 py-2 bg-gradient-to-br from-primary to-primary-container text-white font-semibold rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all">Sign Up</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<section class="relative min-h-[870px] flex items-center px-8 overflow-hidden">
+<div class="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/10">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-[11px] font-bold tracking-widest uppercase">Édition Premium 2024</span>
+</div>
+<h1 class="text-[3.5rem] leading-[1.1] font-bold tracking-tight text-on-surface">
+                        Trouvez votre prochain <span class="text-primary italic">emploi</span> en 1 clic
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                        L'architecture de votre carrière commence ici. Accédez à des opportunités exclusives sélectionnées par nos experts.
+                    </p>
+<div class="p-2 bg-surface-container-lowest shadow-2xl shadow-on-surface/5 rounded-2xl flex flex-col md:flex-row gap-2 max-w-2xl border border-outline-variant/10">
+<div class="flex-1 flex items-center gap-3 px-4 py-3">
+<span class="material-symbols-outlined text-primary">work</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-medium" placeholder="Poste, titre ou mots-clés" type="text"/>
+</div>
+<div class="w-px h-8 bg-outline-variant/30 self-center hidden md:block"></div>
+<div class="flex-1 flex items-center gap-3 px-4 py-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface font-medium" placeholder="Ville ou télétravail" type="text"/>
+</div>
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-lg shadow-primary/25">
+                            Rechercher
+                        </button>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant font-semibold group">
+<span>Voir les offres populaires</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -top-20 -right-20 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl rotate-3 scale-105 aspect-[4/5]">
+<img class="w-full h-full object-cover" data-alt="Professional woman architect in a bright modern office studio with blueprints and large windows overlooking a city skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvSP5Iqkg96ED-3Wn8HZ1ZIIjClQnrmRfe6d2RLCER5EAE0ZKBw0JdHTZ-Ztw7wRoc7Ng-R-clUs5gVYzo_IeGZaGOsvc_KphS0vWXoCivea-a2uUsywVKwAgAwiOOV_BRhPMNsCjEwvkZc12qS67mG8Ok-_ZkvW5m2nZ9hX2PgM15K9E1aJpHrazt7wIptnC4x-_QWY0obHG3dCvLab3--fXZh-hTiuuc3ETihZ-eIGidadE5ACVoYRu85D4AFi0KnpF8TxJBzgn"/>
+<div class="absolute bottom-8 left-8 right-8 p-6 bg-surface-container-lowest/85 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">Match Score: 98%</p>
+<p class="text-xs text-on-surface-variant">Profil idéal pour Designer Senior</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-10 -left-10 z-20 p-6 bg-white rounded-2xl shadow-2xl border border-slate-100 flex flex-col gap-2 -rotate-2">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Salaire Estimé</p>
+<p class="text-2xl font-bold text-primary">65k€ - 85k€</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+<div class="space-y-4">
+<p class="text-primary font-bold tracking-widest text-xs uppercase">Exploration</p>
+<h2 class="text-4xl font-bold tracking-tight">Parcourir par catégories</h2>
+</div>
+<div class="flex gap-2 flex-wrap">
+<button class="px-6 py-3 bg-surface-container-lowest text-primary rounded-full font-bold shadow-sm border border-primary/10 hover:bg-primary hover:text-white transition-all">Tous</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant rounded-full font-medium hover:bg-surface-container-highest transition-all">IT &amp; Tech</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant rounded-full font-medium hover:bg-surface-container-highest transition-all">Marketing</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant rounded-full font-medium hover:bg-surface-container-highest transition-all">Finance</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant rounded-full font-medium hover:bg-surface-container-highest transition-all">Design</button>
+<button class="px-6 py-3 bg-white text-on-surface-variant rounded-full font-medium hover:bg-surface-container-highest transition-all">Santé</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-12 hide-scrollbar -mx-4 px-4 snap-x">
+<div class="snap-start min-w-[340px] p-8 bg-surface-container-lowest rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow group">
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-slate-900">token</span>
+</div>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-xs font-bold rounded-full">CDI</span>
+</div>
+<div class="space-y-2 mb-8">
+<h3 class="text-2xl font-bold leading-tight">Lead UX Designer</h3>
+<p class="text-on-surface-variant">Architectural Lab • Paris</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-bold text-lg">75k€ - 90k€</p>
+<span class="material-symbols-outlined text-outline-variant">bookmark</span>
+</div>
+</div>
+<div class="snap-start min-w-[340px] p-8 bg-surface-container-lowest rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow group">
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-blue-600">code</span>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">Remote</span>
+</div>
+<div class="space-y-2 mb-8">
+<h3 class="text-2xl font-bold leading-tight">Développeur Fullstack</h3>
+<p class="text-on-surface-variant">Vercel Corp • Remote</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-bold text-lg">55k€ - 70k€</p>
+<span class="material-symbols-outlined text-outline-variant">bookmark</span>
+</div>
+</div>
+<div class="snap-start min-w-[340px] p-8 bg-surface-container-lowest rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow group">
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-emerald-600">monitoring</span>
+</div>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary text-xs font-bold rounded-full">CDI</span>
+</div>
+<div class="space-y-2 mb-8">
+<h3 class="text-2xl font-bold leading-tight">Data Scientist</h3>
+<p class="text-on-surface-variant">Insight AI • Lyon</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-bold text-lg">60k€ - 85k€</p>
+<span class="material-symbols-outlined text-outline-variant">bookmark</span>
+</div>
+</div>
+<div class="snap-start min-w-[340px] p-8 bg-surface-container-lowest rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow group">
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl text-purple-600">campaign</span>
+</div>
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">CDD</span>
+</div>
+<div class="space-y-2 mb-8">
+<h3 class="text-2xl font-bold leading-tight">Chef de Projet Marketing</h3>
+<p class="text-on-surface-variant">L'Oréal • Paris</p>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-bold text-lg">45k€ - 55k€</p>
+<span class="material-symbols-outlined text-outline-variant">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1">
+<div class="grid grid-cols-2 gap-6 relative">
+<div class="space-y-6 pt-12">
+<div class="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-50">
+<div class="flex gap-1 mb-4 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant mb-6 italic leading-relaxed">"Une plateforme qui comprend vraiment les enjeux du recrutement haut de gamme. J'ai trouvé mon poste actuel en moins de deux semaines."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200">
+<img class="w-full h-full object-cover rounded-full" data-alt="Portrait of a smiling young professional man with short dark hair and glasses in a casual office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyX87kYkjRjgX--zM6Uoz2p6I3RgFwgv3yhR_3MyoyaJilKw2rLRupefWadFPgsyRUvHeBNHAoIy50JWw-JFzWu27SF6ktidwPG-Zf41ZaTVlpuHNXpbk5vrC7l-2UrEtzcpaAUjUGMBQ0Le4Z0xMqgb8yu0fEzdXqoI08aB1ZBuZVYCYkDr4xOG9tcZDaNrhYbAJs6YLQ8hEOGWlHwCN1or2i8dVAyGdb-dD2LDlE6tAdOR8JxH_TFhT8OONa2uGZzfQv64qrvITo"/>
+</div>
+<div>
+<p class="font-bold text-sm">Marc Antoine</p>
+<p class="text-xs text-on-surface-variant">Product Manager</p>
+</div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-[2rem] text-white shadow-2xl shadow-primary/20">
+<p class="text-4xl font-bold mb-2">94%</p>
+<p class="text-sm opacity-80 uppercase tracking-widest font-bold">Taux de Satisfaction</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white p-6 rounded-[2rem] shadow-xl border border-slate-50">
+<div class="flex gap-1 mb-4 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant mb-6 italic leading-relaxed">"L'interface est d'une clarté incroyable. On n'a pas l'impression de chercher un emploi, mais de construire un avenir."</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200">
+<img class="w-full h-full object-cover rounded-full" data-alt="Close up portrait of a young professional woman with long dark hair smiling brightly with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDyWaQktfe5xOcPU-3KwcWhPYnk7yGFP9rCpKh3YbX0X4NBDKf9DB14JYXNO9HgB5RjjSLkugrPCPSz-NhXhI9Fkz8dWiV9h7onLDkkEwZubDT8Hk_bFKxkXRg-XINi0Z3fFMHS7SEblWtcNVV7JQQ5wVT-ItXEESC-hkPis__IztiJd_qbWl2i0Y0VtSnZls-aRv84pEefTG5bfNEhtxeXqYXtyCqWEyaJ2xs04-ROuyhS9HVMP9TVJ9SWJnUOyNVhrgcfNZkamd"/>
+</div>
+<div>
+<p class="font-bold text-sm">Sophie L.</p>
+<p class="text-xs text-on-surface-variant">Directrice Artistique</p>
+</div>
+</div>
+</div>
+<div class="bg-tertiary p-8 rounded-[2rem] text-white shadow-2xl shadow-tertiary/20">
+<p class="text-4xl font-bold mb-2">+12k</p>
+<p class="text-sm opacity-80 uppercase tracking-widest font-bold">Offres Actives</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<p class="text-primary font-bold tracking-widest text-xs uppercase">Témoignages</p>
+<h2 class="text-5xl font-bold tracking-tight leading-tight">Ils ont bâti leur futur avec nous</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                            Nous ne nous contentons pas de lister des offres. Nous créons des connexions durables entre des talents d'exception et des entreprises visionnaires.
+                        </p>
+<div class="pt-4">
+<button class="flex items-center gap-4 text-primary font-bold group">
+<span class="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">play_arrow</span>
+</span>
+<span>Voir les success stories</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-8">
+<div class="max-w-[1440px] mx-auto bg-primary rounded-[3rem] p-12 lg:p-24 relative overflow-hidden text-center">
+<div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-tertiary/20 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-10">
+<h2 class="text-4xl lg:text-5xl font-bold text-white tracking-tight">Prêt à franchir le cap ?</h2>
+<p class="text-xl text-primary-fixed leading-relaxed">
+                        Rejoignez plus de 500,000 professionnels et recevez les meilleures offres directement dans votre boîte mail.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<input class="px-8 py-5 bg-white/10 border border-white/20 rounded-2xl text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 focus:outline-none w-full sm:w-80 backdrop-blur-md" placeholder="votre@email.com" type="email"/>
+<button class="px-10 py-5 bg-white text-primary font-bold rounded-2xl hover:bg-primary-fixed transition-colors shadow-xl">Commencer gratuitement</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#f7f9fb] border-t border-slate-100 py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-xl font-bold tracking-tighter text-[#004ac6]">JobFinder Architect</span>
+<p class="text-xs uppercase tracking-widest text-slate-400">© 2024 JobFinder Architect. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-xs uppercase tracking-widest text-slate-400 hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="text-xs uppercase tracking-widest text-slate-400 hover:text-primary transition-opacity" href="#">Terms of Service</a>
+<a class="text-xs uppercase tracking-widest text-slate-400 hover:text-primary transition-opacity" href="#">Help Center</a>
+<a class="text-xs uppercase tracking-widest text-slate-400 hover:text-primary transition-opacity" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[18px]">language</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
