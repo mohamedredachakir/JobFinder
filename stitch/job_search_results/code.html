@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find Jobs | JobFinder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#d5e0f8",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-tertiary-container": "#bdffdb",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#dbe1ff",
+                        "primary": "#004ac6",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed": "#002113",
+                        "tertiary": "#006242",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#111c2d",
+                        "secondary-fixed": "#d8e3fb",
+                        "error-container": "#ffdad6",
+                        "secondary": "#545f73",
+                        "tertiary-container": "#007d55",
+                        "primary-container": "#2563eb",
+                        "outline-variant": "#c3c6d7",
+                        "on-background": "#191c1e",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed": "#00174b",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-secondary-container": "#586377",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-primary": "#b4c5ff",
+                        "on-surface": "#191c1e",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container": "#eceef0",
+                        "outline": "#737686",
+                        "on-primary-container": "#eeefff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#f7f9fb]/85 backdrop-blur-lg shadow-sm">
+<div class="max-w-[1440px] mx-auto px-8 flex items-center justify-between h-20">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-[#004ac6]">JobFinder</span>
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="text-[#004ac6] font-semibold border-b-2 border-[#004ac6] pb-1" href="#">Find Jobs</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">Companies</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">Salaries</a>
+<a class="text-slate-500 hover:text-[#004ac6] transition-all duration-200" href="#">My Careers</a>
+</nav>
+</div>
+<div class="flex-1 max-w-xl mx-8 hidden lg:block">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-11 pl-12 pr-4 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Search job title, keywords..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a confident male executive in a studio with soft overhead lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdB4-9Foc7g6mAyYFLHGSBHbtP406VHGGOOmkz5PGW3e8hRtzm1PhjUgZeKoNqEzGn_x-wFn9Z_7DcmhhVeY3U__EhPUojZ7m0ng7sfffkwrez6tSzTPFud-BlQmtGtiBfop8ThvwSyQAOnHQI4jU-RR1hZaLytIa6ylNNYOx_KV55JSBaEPCTPGHc4joDXXcm7gN0xpnuyL75eZlpSZV2TF46DAv46tBlzoesOYfMQ0Luo_M5yOwPFvij4GPOtVt22PXH69xAAkF7"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-20 max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Filter Sidebar -->
+<aside class="w-full md:w-[24%] shrink-0">
+<div class="sticky top-28 space-y-8">
+<div>
+<h2 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Filters</h2>
+<!-- Contract Type -->
+<div class="mb-8">
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">Contract Type</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Full-time (CDI)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Contract (CDD)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Internship</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Freelance</span>
+</label>
+</div>
+</div>
+<!-- Salary Range -->
+<div class="mb-8">
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">Salary Range (Annual)</label>
+<div class="px-2">
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="200" min="30" step="5" type="range" value="80"/>
+<div class="flex justify-between mt-3 text-xs font-semibold text-on-surface-variant">
+<span>$30k</span>
+<span>$80k+</span>
+<span>$200k</span>
+</div>
+</div>
+</div>
+<!-- Remote Options -->
+<div class="mb-8">
+<label class="block text-xs font-bold uppercase tracking-widest text-outline mb-4">Remote Options</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Remote Only</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">Hybrid</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm text-on-surface font-medium group-hover:text-primary transition-colors">On-site</span>
+</label>
+</div>
+</div>
+</div>
+<button class="w-full py-3 px-4 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-bold text-xs uppercase tracking-widest rounded-xl transition-all">
+                        Reset All Filters
+                    </button>
+</div>
+</aside>
+<!-- Results List -->
+<div class="flex-1 space-y-6">
+<!-- Sorting & Header -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<div>
+<h1 class="text-2xl font-semibold text-on-surface mb-1">Product Design Roles</h1>
+<p class="text-sm text-on-surface-variant">Showing 1,248 job results in San Francisco, CA</p>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-1 rounded-xl">
+<span class="text-xs font-bold uppercase tracking-widest text-outline px-3">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-primary focus:ring-0 cursor-pointer pr-8">
+<option>Relevance</option>
+<option>Newest First</option>
+<option>Salary: High to Low</option>
+</select>
+</div>
+</div>
+<!-- Job Cards -->
+<div class="grid gap-6">
+<!-- Card 1 (Premium/Featured) -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.08)] transition-all duration-300">
+<div class="flex gap-6">
+<div class="h-16 w-16 bg-[#f0f4ff] rounded-xl flex items-center justify-center shrink-0">
+<img class="h-10 w-10" data-alt="minimalist logo of a modern tech company with clean geometric shapes on a light blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1PBNdeSZ3793V90PdOtMkXwuPPsi8TvAk3rBAWa7j0nyZt0JjkdmCo-BVXqsQRBlXq_zZdQRD3kvws1iReIfnsdZou7DSwVlhYTJlemRgx79XX1PIfmGT6YrgyQY-3VlNdTJwFEsyR3SIwRc_cbx9r4i0SAmT_nPSieatJict_Jbyjn5yjr67wQ3R6ou1sdyon8ki0bAvdazNZd5Z2pLlszkfNmvVDhKhhuGZ3magvdw1S5DAt-sTFuurkvWnP2asq3QkpbM1ENCl"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-semibold text-on-surface group-hover:text-primary transition-colors">Senior Product Designer</h3>
+<span class="px-2 py-0.5 bg-tertiary/10 text-tertiary text-[10px] font-bold uppercase tracking-wider rounded">98% Match</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">Stripe • San Francisco, CA (Hybrid)</p>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Fintech</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Design Systems</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Full-time</span>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-on-surface">$165k – $210k</span>
+<span class="text-xs text-outline font-medium">/ year</span>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-primary hover:bg-primary/5 rounded-xl transition-all">Quick View</button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.08)] transition-all duration-300">
+<div class="flex gap-6">
+<div class="h-16 w-16 bg-[#fff0f0] rounded-xl flex items-center justify-center shrink-0">
+<img class="h-10 w-10" data-alt="abstract circular logo in shades of red and orange for a lifestyle brand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWKsGF1Rp7m2TCZmrRE9THWSZBpuWY1eHFz4icI22rqJm8IBjAnPpwfTuNnVAQhPYvB2aFCVHBGJRn3lT8WFKRRxB2cEgJZ-JlvuY88nOH5YkI7CtygMC_LVYyKnntfldUvf7vwhkuSyvIRoSOR3ARL7nHUpI-lkjEiRnmlAy6mFmNJ5cL-lMW_Q-R-PgnZ84dRB3OOEGskWplpQePVeBTGI6PgYDukyVFSbtNFCXwBE_w1B6BRJjnwrkxqLLmzdPvBaLmxn_o8H3"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-semibold text-on-surface group-hover:text-primary transition-colors">Visual Designer, Marketing</h3>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded">New</span>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">Airbnb • Remote</p>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Travel</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Remote</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">CDI</span>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-on-surface">$140k – $185k</span>
+<span class="text-xs text-outline font-medium">/ year</span>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-primary hover:bg-primary/5 rounded-xl transition-all">Quick View</button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-2xl shadow-[0_12px_32px_-4px_rgba(25,28,30,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.08)] transition-all duration-300">
+<div class="flex gap-6">
+<div class="h-16 w-16 bg-[#f7f9fb] rounded-xl flex items-center justify-center shrink-0">
+<img class="h-10 w-10" data-alt="sleek black and white logo for a creative agency featuring elegant typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx4LxcN3_kjItLNj0kbp7bKONwBirinWPubJt34iu4oB3UbuiIug29izKJoEys5DBrd1fAUBBwAuA2H6U__0AhuuOseaZ1YlL1ww8gbIW9Efon5k7D77BvUhj3DFw2QZlQ19nHHwdM668Q6-QePP1fo-XUCWh-iORKYpemy63asOfQFuXzwYr_mGE7GB7kGUNsn9dtYM_PSr7ru_Tpp1tJXKXmlBQl9Ovp56BNAjvrP6Ll63KG_k8X4yFUOZq35mWxWiOmGpNEeqwd"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-xl font-semibold text-on-surface group-hover:text-primary transition-colors">UX Researcher (Contract)</h3>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">Figma • San Francisco, CA</p>
+</div>
+<button class="p-2 text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">Tools</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">On-site</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-medium rounded-full">6 Months</span>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-on-surface">$85 – $110</span>
+<span class="text-xs text-outline font-medium">/ hour</span>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 text-sm font-bold text-primary hover:bg-primary/5 rounded-xl transition-all">Quick View</button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white text-sm font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-2">
+<button class="h-10 w-10 flex items-center justify-center rounded-xl text-outline hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-xl bg-primary text-white font-bold text-sm shadow-md shadow-primary/20">1</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-xl text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">2</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-xl text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">3</button>
+<span class="text-outline px-2">...</span>
+<button class="h-10 w-10 flex items-center justify-center rounded-xl text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">12</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-xl text-outline hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f7f9fb] border-t border-slate-100 py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500">© 2024 JobFinder Architect. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-opacity" href="#">Help Center</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-opacity" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>
