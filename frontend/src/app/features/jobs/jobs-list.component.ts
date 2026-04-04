@@ -153,8 +153,8 @@ import { Job } from '../../core/models';
                   </div>
                   <div class="job-footer">
                     <div class="job-salary" *ngIf="job.salaryMin">
-                      <span class="salary-value">\${{ formatSalary(job.salaryMin) }} – \${{ formatSalary(job.salaryMax || job.salaryMin) }}</span>
-                      <span class="salary-period">/ year</span>
+                       <span class="salary-value">{{ formatSalary(job.salaryMin, job.salaryCurrency) }} – {{ formatSalary(job.salaryMax || job.salaryMin, job.salaryCurrency) }}</span>
+                       <span class="salary-period">/ year</span>
                     </div>
                     <div class="job-actions">
                       <button class="action-btn quick-view" (click)="quickView($event, job)">Quick View</button>
@@ -960,8 +960,10 @@ export class JobsListComponent implements OnInit {
     return diff < 3;
   }
 
-  formatSalary(amount: number): string {
-    return amount ? amount.toLocaleString() : '0';
+  formatSalary(amount: number, currency: string = 'EUR'): string {
+    if (!amount) return '0';
+    const symbol = currency === 'EUR' ? '€' : currency === 'USD' ? '$' : currency + ' ';
+    return symbol + amount.toLocaleString();
   }
 
   toggleBookmark(event: Event, job: Job): void {

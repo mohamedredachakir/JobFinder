@@ -108,7 +108,7 @@ import { ApiService } from '../../core/services/api.service';
   styles: [`
     .admin-page {
       min-height: 100vh;
-      background: var(--surface);
+      background: #f7f9fb;
       padding: 2rem;
     }
 
@@ -120,12 +120,12 @@ import { ApiService } from '../../core/services/api.service';
     .page-header h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.5rem;
     }
 
     .page-header p {
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .admin-content {
@@ -143,42 +143,42 @@ import { ApiService } from '../../core/services/api.service';
     }
 
     .stat-card {
-      background: var(--surface-container-lowest);
-      border-radius: var(--radius-xl);
+      background: white;
+      border-radius: 1.5rem;
       padding: 1.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .stat-card .material-symbols-outlined {
       font-size: 2.5rem;
-      color: var(--primary);
+      color: #2563EB;
     }
 
     .stat-value {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
     }
 
     .stat-label {
       font-size: 0.85rem;
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .section-card {
-      background: var(--surface-container-lowest);
-      border-radius: var(--radius-xl);
+      background: white;
+      border-radius: 1.5rem;
       padding: 2rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .section-card h2 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 1.5rem;
     }
 
@@ -190,8 +190,8 @@ import { ApiService } from '../../core/services/api.service';
 
     .api-source {
       padding: 1rem;
-      background: var(--surface-container-low);
-      border-radius: var(--radius-md);
+      background: #f2f4f6;
+      border-radius: 0.75rem;
     }
 
     .source-header {
@@ -207,36 +207,36 @@ import { ApiService } from '../../core/services/api.service';
 
     .status-badge {
       padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-full);
+      border-radius: 999px;
       font-size: 0.7rem;
       font-weight: 700;
-      background: var(--error-container);
-      color: var(--error);
+      background: #ffdad6;
+      color: #ba1a1a;
     }
 
     .status-badge.active {
       background: rgba(0, 98, 66, 0.1);
-      color: var(--tertiary);
+      color: #10B981;
     }
 
     .source-stats {
       display: flex;
       justify-content: space-between;
       font-size: 0.8rem;
-      color: var(--on-surface-variant);
+      color: #64748b;
       margin-bottom: 0.5rem;
     }
 
     .source-bar {
       height: 4px;
-      background: var(--outline-variant);
+      background: #e6e8ea;
       border-radius: 2px;
       overflow: hidden;
     }
 
     .bar-fill {
       height: 100%;
-      background: var(--primary);
+      background: #2563EB;
       border-radius: 2px;
     }
 
@@ -251,29 +251,29 @@ import { ApiService } from '../../core/services/api.service';
       align-items: center;
       gap: 1rem;
       padding: 0.75rem;
-      background: var(--surface-container-low);
-      border-radius: var(--radius-md);
+      background: #f2f4f6;
+      border-radius: 0.75rem;
     }
 
     .activity-icon {
       width: 2.5rem;
       height: 2.5rem;
-      background: var(--primary-fixed);
+      background: #dbeafe;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
+      color: #2563EB;
     }
 
     .activity-text {
       font-weight: 500;
-      color: var(--on-surface);
+      color: #1E293B;
     }
 
     .activity-time {
       font-size: 0.75rem;
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .quick-links {
@@ -287,16 +287,17 @@ import { ApiService } from '../../core/services/api.service';
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.25rem;
-      background: var(--surface-container-low);
-      border-radius: var(--radius-md);
+      background: #f2f4f6;
+      border-radius: 0.75rem;
       font-weight: 600;
-      color: var(--on-surface);
-      transition: all var(--transition-base);
+      color: #1E293B;
+      transition: all 0.2s;
+      text-decoration: none;
     }
 
     .quick-link:hover {
-      background: var(--primary);
-      color: var(--on-primary);
+      background: #2563EB;
+      color: white;
     }
 
     @media (max-width: 900px) {

@@ -87,9 +87,9 @@ import { Job } from '../../core/models';
               <div class="sidebar-card salary-card" *ngIf="job.salaryMin">
                 <h3>Salaire</h3>
                 <div class="salary-range">
-                  <span class="salary-value">\${{ formatSalary(job.salaryMin) }}</span>
+                  <span class="salary-value">{{ formatSalary(job.salaryMin) }}</span>
                   <span class="salary-separator">-</span>
-                  <span class="salary-value">\${{ formatSalary(job.salaryMax || job.salaryMin) }}</span>
+                  <span class="salary-value">{{ formatSalary(job.salaryMax || job.salaryMin) }}</span>
                 </div>
                 <p class="salary-period">Par an</p>
               </div>
@@ -478,6 +478,7 @@ export class JobDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private api: ApiService,
     private authService: AuthService
   ) {}
@@ -510,18 +511,24 @@ export class JobDetailComponent implements OnInit {
   }
 
   formatSalary(amount: number): string {
-    return amount ? amount.toLocaleString() : '0';
+    if (!amount) return '0';
+    const symbol = this.job?.salaryCurrency === 'USD' ? '$' : '€';
+    return symbol + amount.toLocaleString();
   }
 
   saveToFavorites(): void {
     if (!this.authService.isAuthenticated()) {
-      this.authService.logout();
+      this.router.navigate(['/auth/login']);
       return;
     }
     if (this.job) {
       this.api.addFavorite(this.job).subscribe({
         next: () => this.isSaved = true,
-        error: () => {}
+        error: (err) => {
+          if (err.error?.message === 'Job already in favorites') {
+            this.isSaved = true;
+          }
+        }
       });
     }
   }

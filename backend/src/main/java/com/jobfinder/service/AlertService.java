@@ -6,6 +6,7 @@ import com.jobfinder.model.Alert;
 import com.jobfinder.repository.AlertRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AlertService {
@@ -26,6 +27,7 @@ public class AlertService {
         return alertRepository.findAllByIsActiveTrue();
     }
 
+    @Transactional
     public Alert create(Requests.AlertRequest request) {
         Alert alert = new Alert();
         alert.setUser(userContextService.currentUser());
@@ -33,12 +35,14 @@ public class AlertService {
         return alertRepository.save(alert);
     }
 
+    @Transactional
     public Alert update(Long id, Requests.AlertRequest request) {
         Alert alert = owned(id);
         apply(alert, request);
         return alertRepository.save(alert);
     }
 
+    @Transactional
     public void delete(Long id) {
         alertRepository.delete(owned(id));
     }

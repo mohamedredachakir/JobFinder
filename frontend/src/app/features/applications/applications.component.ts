@@ -863,16 +863,16 @@ export class ApplicationsComponent implements OnInit {
     this.api.getApplications().subscribe({
       next: (applications) => {
         this.columns.forEach(col => col.items = []);
-        applications.forEach((app: any) => {
+        applications.forEach((app) => {
           const column = this.columns.find(c => c.id === this.mapStatusToColumn(app.status));
           if (column) {
             column.items.push({
-              id: app.id,
+              id: String(app.id),
               title: app.jobData?.title || 'Unknown Position',
               company: app.jobData?.company || 'Unknown',
               location: app.jobData?.location || '',
               logoUrl: app.jobData?.logoUrl || 'https://via.placeholder.com/40',
-              dateLabel: this.formatDate(app.appliedAt || app.savedAt)
+              dateLabel: this.formatDate(app.appliedAt || app.savedAt || '')
             });
           }
         });

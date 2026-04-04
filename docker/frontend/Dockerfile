@@ -1,7 +1,13 @@
 FROM node:20-alpine AS build
 WORKDIR /app
+ENV CI=true
+ENV NG_CLI_ANALYTICS=false
 COPY frontend/package*.json ./
-RUN npm install
+RUN npm config set fetch-retries 5 \
+    && npm config set fetch-retry-mintimeout 20000 \
+    && npm config set fetch-retry-maxtimeout 120000 \
+    && npm config set prefer-offline true \
+    && npm ci --no-audit --no-fund
 COPY frontend/ .
 RUN npm run build -- --configuration production
 

@@ -105,7 +105,7 @@ import { User } from '../../core/models';
   styles: [`
     .profile-page {
       min-height: 100vh;
-      background: var(--surface);
+      background: #f7f9fb;
       padding: 2rem;
     }
 
@@ -117,12 +117,12 @@ import { User } from '../../core/models';
     .page-header h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.5rem;
     }
 
     .page-header p {
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .profile-content {
@@ -136,10 +136,10 @@ import { User } from '../../core/models';
     .profile-card,
     .form-card,
     .danger-card {
-      background: var(--surface-container-lowest);
-      border-radius: var(--radius-xl);
+      background: white;
+      border-radius: 1.5rem;
       padding: 2rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .avatar-section {
@@ -154,7 +154,7 @@ import { User } from '../../core/models';
       height: 6rem;
       border-radius: 50%;
       overflow: hidden;
-      background: var(--primary-fixed);
+      background: #dbeafe;
     }
 
     .avatar img {
@@ -166,27 +166,27 @@ import { User } from '../../core/models';
     .avatar-info h2 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.25rem;
     }
 
     .avatar-info p {
-      color: var(--on-surface-variant);
+      color: #64748b;
       margin-bottom: 0.5rem;
     }
 
     .role-badge {
       display: inline-block;
       padding: 0.25rem 0.75rem;
-      background: var(--primary-fixed);
-      color: var(--primary);
+      background: #dbeafe;
+      color: #2563EB;
       font-size: 0.75rem;
       font-weight: 700;
-      border-radius: var(--radius-full);
+      border-radius: 999px;
     }
 
     .cv-section {
-      border-top: 1px solid var(--outline-variant);
+      border-top: 1px solid #e6e8ea;
       padding-top: 1.5rem;
     }
 
@@ -196,16 +196,16 @@ import { User } from '../../core/models';
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      border: 2px dashed var(--outline-variant);
-      border-radius: var(--radius-lg);
+      border: 2px dashed #c3c6d7;
+      border-radius: 1rem;
       cursor: pointer;
       position: relative;
-      transition: all var(--transition-base);
+      transition: all 0.2s;
     }
 
     .cv-upload:hover {
-      border-color: var(--primary);
-      background: var(--primary-fixed);
+      border-color: #2563EB;
+      background: #dbeafe;
     }
 
     .cv-upload input {
@@ -217,13 +217,13 @@ import { User } from '../../core/models';
 
     .cv-upload .material-symbols-outlined {
       font-size: 2.5rem;
-      color: var(--primary);
+      color: #2563EB;
       margin-bottom: 0.5rem;
     }
 
     .cv-upload p {
       font-weight: 600;
-      color: var(--on-surface);
+      color: #1E293B;
     }
 
     .cv-info {
@@ -231,21 +231,21 @@ import { User } from '../../core/models';
       align-items: center;
       gap: 1rem;
       padding: 1rem;
-      background: var(--surface-container-low);
-      border-radius: var(--radius-md);
+      background: #f2f4f6;
+      border-radius: 0.75rem;
     }
 
     .cv-info .material-symbols-outlined {
-      color: var(--tertiary);
+      color: #10B981;
     }
 
     .remove-cv {
       margin-left: auto;
       padding: 0.4rem 0.75rem;
-      background: var(--error-container);
-      color: var(--error);
+      background: #ffdad6;
+      color: #ba1a1a;
       border: none;
-      border-radius: var(--radius-sm);
+      border-radius: 0.5rem;
       font-weight: 600;
       font-size: 0.8rem;
       cursor: pointer;
@@ -254,14 +254,14 @@ import { User } from '../../core/models';
     .form-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 1.5rem;
     }
 
     .form-card h3:not(:first-child) {
       margin-top: 2rem;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--outline-variant);
+      border-top: 1px solid #e6e8ea;
     }
 
     .profile-form {
@@ -285,7 +285,7 @@ import { User } from '../../core/models';
     .form-group label {
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--on-surface);
+      color: #1E293B;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -293,35 +293,35 @@ import { User } from '../../core/models';
     .form-group input,
     .form-group select {
       padding: 0.875rem 1rem;
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-md);
+      border: 1px solid #c3c6d7;
+      border-radius: 0.75rem;
       font-size: 1rem;
-      background: var(--surface);
-      color: var(--on-surface);
+      background: white;
+      color: #1E293B;
     }
 
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: var(--primary);
+      border-color: #2563EB;
     }
 
     .form-group input:disabled {
-      background: var(--surface-container-low);
-      color: var(--on-surface-variant);
+      background: #f2f4f6;
+      color: #64748b;
     }
 
     .btn-save {
       margin-top: 1rem;
       padding: 1rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-container));
-      color: var(--on-primary);
+      background: linear-gradient(135deg, #2563EB, #2563EB);
+      color: white;
       border: none;
-      border-radius: var(--radius-md);
+      border-radius: 0.75rem;
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
-      transition: all var(--transition-base);
+      transition: all 0.2s;
     }
 
     .btn-save:hover:not(:disabled) {
@@ -335,33 +335,33 @@ import { User } from '../../core/models';
     }
 
     .danger-card {
-      border: 1px solid var(--error-container);
+      border: 1px solid #ffdad6;
     }
 
     .danger-card h3 {
-      color: var(--error);
+      color: #ba1a1a;
       margin-bottom: 0.5rem;
     }
 
     .danger-card p {
-      color: var(--on-surface-variant);
+      color: #64748b;
       margin-bottom: 1rem;
     }
 
     .btn-danger {
       padding: 0.75rem 1.5rem;
-      background: var(--error);
-      color: var(--on-error);
+      background: #ba1a1a;
+      color: white;
       border: none;
-      border-radius: var(--radius-md);
+      border-radius: 0.75rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all var(--transition-base);
+      transition: all 0.2s;
     }
 
     .btn-danger:hover {
-      background: var(--on-error-container);
-      color: var(--error);
+      background: #ffdad6;
+      color: #ba1a1a;
     }
 
     @media (max-width: 600px) {

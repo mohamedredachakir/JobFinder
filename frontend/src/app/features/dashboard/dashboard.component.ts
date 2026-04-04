@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { ApiService } from '../../core/services/api.service';
 
@@ -20,6 +20,10 @@ import { ApiService } from '../../core/services/api.service';
             <span class="material-symbols-outlined">dashboard</span>
             <span class="nav-text">Dashboard</span>
           </a>
+          <a routerLink="/jobs" class="nav-item">
+            <span class="material-symbols-outlined">search</span>
+            <span class="nav-text">Find Jobs</span>
+          </a>
           <a routerLink="/applications" class="nav-item">
             <span class="material-symbols-outlined">work_history</span>
             <span class="nav-text">Applications</span>
@@ -28,17 +32,22 @@ import { ApiService } from '../../core/services/api.service';
             <span class="material-symbols-outlined">bookmark</span>
             <span class="nav-text">Saved Jobs</span>
           </a>
-          <a href="#" class="nav-item">
-            <span class="material-symbols-outlined">chat</span>
-            <span class="nav-text">Messages</span>
+          <a routerLink="/alerts" class="nav-item">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="nav-text">Job Alerts</span>
           </a>
           <a routerLink="/profile" class="nav-item">
             <span class="material-symbols-outlined">settings</span>
-            <span class="nav-text">Settings</span>
+            <span class="nav-text">Profile</span>
+          </a>
+          <a routerLink="/admin" class="nav-item" *ngIf="isAdmin">
+            <span class="material-symbols-outlined">admin_panel_settings</span>
+            <span class="nav-text">Admin Panel</span>
           </a>
         </nav>
         <div class="sidebar-footer">
           <button class="post-job-btn">Post a Job</button>
+          <button class="logout-btn" (click)="logout()">Logout</button>
         </div>
       </aside>
 
@@ -355,6 +364,25 @@ import { ApiService } from '../../core/services/api.service';
     .post-job-btn:hover {
       opacity: 0.9;
       transform: scale(0.98);
+    }
+
+    .logout-btn {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      background: transparent;
+      color: #ba1a1a;
+      border: 1px solid #ba1a1a;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: #ba1a1a;
+      color: white;
     }
 
     .main-content {
@@ -1198,6 +1226,7 @@ export class DashboardComponent implements OnInit {
   acceptedCount = 3;
   rejectedCount = 2;
   newMatches = 5;
+  isAdmin = false;
 
   chartData = [40, 60, 95, 30, 55, 80, 45];
   weekDays = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
@@ -1209,10 +1238,12 @@ export class DashboardComponent implements OnInit {
     { title: 'Creative Director', company: 'Studio Nova', location: 'Bordeaux, FR', logoUrl: null, matchScore: 85, type: 'Full-time', salary: '€70k - €90k', workMode: 'On-site' }
   ];
 
-  constructor(private authService: AuthService, private api: ApiService) {}
+  constructor(private authService: AuthService, private api: ApiService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadData();
+    const user = this.authService.getUser();
+    this.isAdmin = user?.role === 'ADMIN';
   }
 
   loadData(): void {
@@ -1238,5 +1269,9 @@ export class DashboardComponent implements OnInit {
 
   getUserAvatar(): string {
     return 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100';
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

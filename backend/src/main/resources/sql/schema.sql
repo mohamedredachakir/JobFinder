@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS favorites (
   id BIGSERIAL PRIMARY KEY,
   user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   job_id VARCHAR(255) NOT NULL,
-  job_data JSONB NOT NULL,
+  job_data TEXT NOT NULL,
   saved_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS applications (
   id BIGSERIAL PRIMARY KEY,
   user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   job_id VARCHAR(255) NOT NULL,
-  job_data JSONB NOT NULL,
+  job_data TEXT NOT NULL,
   status VARCHAR(50) NOT NULL,
   notes TEXT,
   applied_at TIMESTAMP,

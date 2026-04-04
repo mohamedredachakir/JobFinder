@@ -6,6 +6,7 @@ import com.jobfinder.model.Favorite;
 import com.jobfinder.repository.FavoriteRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class FavoriteService {
@@ -22,7 +23,14 @@ public class FavoriteService {
         return favoriteRepository.findAllByUserIdOrderBySavedAtDesc(userContextService.currentUser().getId());
     }
 
+    @Transactional
     public Favorite create(Requests.FavoriteCreateRequest request) {
+        Long userId = userContextService.currentUser().getId();
+        
+        if (favoriteRepository.existsByUserIdAndJobId(userId, request.jobId)) {
+            throw new IllegalArgumentException("Job already in favorites");
+        }
+        
         Favorite favorite = new Favorite();
         favorite.setUser(userContextService.currentUser());
         favorite.setJobId(request.jobId);
@@ -30,6 +38,7 @@ public class FavoriteService {
         return favoriteRepository.save(favorite);
     }
 
+    @Transactional
     public void delete(Long id) {
         Favorite favorite = favoriteRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Favorite not found"));

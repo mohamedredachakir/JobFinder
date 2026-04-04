@@ -18,6 +18,11 @@ export interface Job {
   tags: string[];
   postedAt: string;
   expiresAt: string | null;
+  matchScore?: number;
+  type?: string;
+  skills?: string[];
+  workMode?: string;
+  salary?: string;
 }
 
 export interface User {
@@ -67,6 +72,7 @@ export interface Application {
   appliedAt: string;
   interviewDate: string | null;
   updatedAt: string;
+  savedAt?: string;
 }
 
 export type ApplicationStatus = 'SAVED' | 'APPLIED' | 'INTERVIEW' | 'OFFER' | 'ACCEPTED' | 'REJECTED';

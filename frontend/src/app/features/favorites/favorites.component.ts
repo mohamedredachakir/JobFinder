@@ -77,7 +77,7 @@ import { Favorite } from '../../core/models';
   styles: [`
     .favorites-page {
       min-height: 100vh;
-      background: var(--surface);
+      background: #f7f9fb;
       padding: 2rem;
     }
 
@@ -94,12 +94,12 @@ import { Favorite } from '../../core/models';
     .header-content h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.5rem;
     }
 
     .header-content p {
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .export-btn {
@@ -107,17 +107,17 @@ import { Favorite } from '../../core/models';
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.25rem;
-      background: var(--surface-container-lowest);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--radius-md);
+      background: white;
+      border: 1px solid #c3c6d7;
+      border-radius: 0.75rem;
       font-weight: 600;
-      color: var(--on-surface);
+      color: #1E293B;
       cursor: pointer;
-      transition: all var(--transition-base);
+      transition: all 0.2s;
     }
 
     .export-btn:hover {
-      background: var(--surface-container-high);
+      background: #f2f4f6;
     }
 
     .favorites-content {
@@ -132,15 +132,15 @@ import { Favorite } from '../../core/models';
     }
 
     .favorite-card {
-      background: var(--surface-container-lowest);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-md);
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       overflow: hidden;
-      transition: all var(--transition-base);
+      transition: all 0.2s;
     }
 
     .favorite-card:hover {
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
       transform: translateY(-2px);
     }
 
@@ -154,10 +154,10 @@ import { Favorite } from '../../core/models';
     .source-badge {
       padding: 0.25rem 0.75rem;
       background: rgba(0, 74, 198, 0.1);
-      color: var(--primary);
+      color: #2563EB;
       font-size: 0.7rem;
       font-weight: 700;
-      border-radius: var(--radius-full);
+      border-radius: 999px;
     }
 
     .remove-btn {
@@ -170,13 +170,13 @@ import { Favorite } from '../../core/models';
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--on-surface-variant);
-      transition: all var(--transition-fast);
+      color: #64748b;
+      transition: all 0.2s;
     }
 
     .remove-btn:hover {
-      background: var(--error-container);
-      color: var(--error);
+      background: #ffdad6;
+      color: #ba1a1a;
     }
 
     .card-body {
@@ -189,8 +189,8 @@ import { Favorite } from '../../core/models';
     .company-logo {
       width: 3.5rem;
       height: 3.5rem;
-      border-radius: var(--radius-md);
-      background: var(--surface-container-low);
+      border-radius: 0.75rem;
+      background: #f2f4f6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -206,13 +206,13 @@ import { Favorite } from '../../core/models';
     .job-info h3 {
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.25rem;
     }
 
     .job-info .company {
       font-weight: 500;
-      color: var(--on-surface-variant);
+      color: #64748b;
       margin-bottom: 0.5rem;
     }
 
@@ -221,7 +221,7 @@ import { Favorite } from '../../core/models';
       align-items: center;
       gap: 0.25rem;
       font-size: 0.85rem;
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .job-info .location .material-symbols-outlined {
@@ -233,17 +233,17 @@ import { Favorite } from '../../core/models';
       justify-content: space-between;
       align-items: center;
       padding: 1rem 1.25rem;
-      border-top: 1px solid var(--outline-variant);
+      border-top: 1px solid #e6e8ea;
     }
 
     .salary {
       font-weight: 700;
-      color: var(--tertiary);
+      color: #10B981;
     }
 
     .saved-date {
       font-size: 0.75rem;
-      color: var(--on-surface-variant);
+      color: #64748b;
     }
 
     .card-actions {
@@ -254,12 +254,13 @@ import { Favorite } from '../../core/models';
       display: block;
       width: 100%;
       padding: 0.75rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-container));
-      color: var(--on-primary);
+      background: linear-gradient(135deg, #2563EB, #2563EB);
+      color: white;
       text-align: center;
       font-weight: 700;
-      border-radius: var(--radius-md);
-      transition: all var(--transition-base);
+      border-radius: 0.75rem;
+      transition: all 0.2s;
+      text-decoration: none;
     }
 
     .btn-apply:hover {
@@ -270,35 +271,36 @@ import { Favorite } from '../../core/models';
     .empty-state {
       text-align: center;
       padding: 4rem 2rem;
-      background: var(--surface-container-lowest);
-      border-radius: var(--radius-xl);
+      background: white;
+      border-radius: 1.5rem;
     }
 
     .empty-state .material-symbols-outlined {
       font-size: 4rem;
-      color: var(--outline-variant);
+      color: #c3c6d7;
       margin-bottom: 1rem;
     }
 
     .empty-state h3 {
       font-size: 1.5rem;
-      color: var(--on-surface);
+      color: #1E293B;
       margin-bottom: 0.5rem;
     }
 
     .empty-state p {
-      color: var(--on-surface-variant);
+      color: #64748b;
       margin-bottom: 1.5rem;
     }
 
     .btn-primary {
       display: inline-flex;
       padding: 0.75rem 1.5rem;
-      background: linear-gradient(135deg, var(--primary), var(--primary-container));
-      color: var(--on-primary);
+      background: linear-gradient(135deg, #2563EB, #2563EB);
+      color: white;
       font-weight: 700;
-      border-radius: var(--radius-md);
-      transition: all var(--transition-base);
+      border-radius: 0.75rem;
+      transition: all 0.2s;
+      text-decoration: none;
     }
 
     .btn-primary:hover {
@@ -313,10 +315,10 @@ import { Favorite } from '../../core/models';
 
     .skeleton-card {
       height: 280px;
-      background: linear-gradient(90deg, var(--surface-container-low) 25%, var(--surface-container-high) 50%, var(--surface-container-low) 75%);
+      background: linear-gradient(90deg, #f2f4f6 25%, #e6e8ea 50%, #f2f4f6 75%);
       background-size: 200% 100%;
       animation: shimmer 1.5s infinite;
-      border-radius: var(--radius-xl);
+      border-radius: 1.5rem;
     }
 
     @keyframes shimmer {

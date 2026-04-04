@@ -1,5 +1,6 @@
 package com.jobfinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ public class Favorite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -17,7 +19,6 @@ public class Favorite {
     @Column(name = "job_id", nullable = false, length = 255)
     private String jobId;
 
-    @Lob
     @Column(name = "job_data", columnDefinition = "TEXT")
     private String jobData;
 

@@ -3,6 +3,8 @@ package com.jobfinder.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jobfinder.dto.AuthDtos;
 import com.jobfinder.service.AuthService;
+import com.jobfinder.security.CustomUserDetailsService;
+import com.jobfinder.security.JwtTokenProvider;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,12 @@ class AuthControllerTest {
 
     @MockBean
     AuthService authService;
+
+    @MockBean
+    JwtTokenProvider jwtTokenProvider;
+
+    @MockBean
+    CustomUserDetailsService customUserDetailsService;
 
     @Test
     void registerShouldReturnOk() throws Exception {
